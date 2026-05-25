@@ -1,7 +1,7 @@
-// Palet warna sprinkles pastel aesthetic
+
 const pastelColors = ['#ff85a1', '#fff2a3', '#a8dadc', '#e63946', '#ffb347'];
 
-// FUNGSI 1: MEMADAMKAN LILIN & MENJALANKAN LOADING PERTAMA
+
 function turnOffCandle() {
     const flames = document.querySelectorAll('.flame');
     flames.forEach(function(flame) {
@@ -40,14 +40,13 @@ function turnOffCandle() {
     }, 600); 
 }
 
-// FUNGSI 2: KLIK TOMBOL NEXT -> MASUK LOADING KEDUA -> SURAT KEDUA (BARU)
+
 function goToNextLoading() {
     const page2 = document.getElementById('page-2');
     const loadingPage2 = document.getElementById('loading-page-2');
 
-    // Sembunyikan halaman surat pertama
     page2.classList.remove('active');
-    // Munculkan halaman loading kedua
+  
     loadingPage2.classList.add('active');
 
     const progressFill2 = document.querySelector('.progress-fill-2');
@@ -62,7 +61,7 @@ function goToNextLoading() {
                 loadingPage2.classList.remove('active');
                 page3.classList.add('active');
 
-                // BOOM! Ledakan Confetti Kedua khusus untuk Surat Kedua
+                
                 triggerConfettiBurst();
 
             }, 400);
@@ -70,12 +69,12 @@ function goToNextLoading() {
             width++;
             progressFill2.style.width = width + '%';
         }
-    }, 20); // Berjalan lancar selama 2 detik
+    }, 20); 
 }
 
-// REUSABLE FUNCTION: LEDAKAN CONFETTI BERUNTUN
+
 function triggerConfettiBurst() {
-    // Kiri bawah ke atas
+ 
     confetti({
         particleCount: 70,
         angle: 60,
@@ -84,7 +83,7 @@ function triggerConfettiBurst() {
         colors: pastelColors
     });
 
-    // Kanan bawah ke atas
+
     setTimeout(function() {
         confetti({
             particleCount: 70,
@@ -95,7 +94,7 @@ function triggerConfettiBurst() {
         });
     }, 150);
 
-    // Letusan besar di tengah
+   
     setTimeout(function() {
         confetti({
             particleCount: 50,
