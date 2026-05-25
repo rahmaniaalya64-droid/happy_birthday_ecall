@@ -1,0 +1,352 @@
+/* --- RESET & LAYOUT UTAMA --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #faf6f0; 
+    font-family: 'Poppins', sans-serif;
+    color: #5c4d4d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden; 
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 450px; 
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    margin-bottom: 70px;
+    color: #7d6e61;
+}
+
+/* --- ANIMASI LALU LALANG BACKGROUND --- */
+.bg-decorations {
+    position: absolute;
+    width: 340px;
+    height: 340px;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    pointer-events: none; 
+}
+
+.bg-sprinkle {
+    position: absolute;
+    width: 10px;
+    height: 4px;
+    border-radius: 2px;
+    animation: floatAround 4s infinite ease-in-out alternate;
+}
+.bs1 { background-color: #ff85a1; top: 20%; left: 10%; transform: rotate(15deg); animation-delay: 0s; }
+.bs2 { background-color: #a8dadc; top: 15%; right: 10%; transform: rotate(-25deg); animation-delay: 0.5s; }
+.bs3 { background-color: #fff2a3; bottom: 25%; left: 5%; transform: rotate(45deg); animation-delay: 1s; }
+.bs4 { background-color: #ffb347; bottom: 30%; right: 5%; transform: rotate(-15deg); animation-delay: 0.2s; }
+
+.bg-star {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #f4d35e;
+    opacity: 0.7;
+    animation: pulseGlow 2.5s infinite ease-in-out alternate;
+}
+.bst1 { top: 5%; left: 45%; animation-delay: 0s; }
+.bst2 { bottom: 10%; left: 50%; animation-delay: 1s; }
+
+.bg-emoji {
+    position: absolute;
+    font-size: 1.3rem;
+    opacity: 0.8;
+    animation: floatAround 5s infinite ease-in-out alternate;
+}
+.be1 { top: 40%; left: -8%; animation-delay: 0.3s; }
+.be2 { top: 35%; right: -8%; animation-delay: 0.7s; }
+
+@keyframes floatAround {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-12px) rotate(15deg); }
+}
+
+@keyframes pulseGlow {
+    0% { transform: scale(0.8); opacity: 0.4; }
+    100% { transform: scale(1.2); opacity: 0.9; }
+}
+
+/* --- SISTEM PERPINDAHAN HALAMAN --- */
+.page-content {
+    display: none; 
+    opacity: 0;
+    transform: scale(0.92);
+    width: 100%;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.page-content.active {
+    display: block; 
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- LOADING BAR SYSTEM --- */
+.loading-container {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+.loading-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #ba9b8a;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    animation: pulseText 1.2s infinite ease-in-out alternate;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: #ebdacf; 
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background-color: #ff85a1; 
+    border-radius: 10px;
+}
+
+.progress-fill-2 {
+    width: 0%;
+    height: 100%;
+    background-color: #b388ff; 
+    border-radius: 10px;
+}
+
+@keyframes pulseText {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* --- DEKORASI KUE INTERAKTIF --- */
+.cake-container {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 20px;
+    z-index: 5;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cake-container:hover {
+    transform: scale(1.06);
+}
+
+.candles-group {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: -30px;
+    left: 0;
+    z-index: 10;
+}
+
+.candle {
+    position: absolute;
+    width: 6px;
+    height: 32px;
+    background: #fff2a3; 
+    border-radius: 3px 3px 0 0;
+    box-shadow: inset 0 0 4px #f4d35e;
+}
+
+.c1 { left: 45px; top: 10px; }
+.c2 { left: 65px; top: 18px; }
+.c3 { left: 90px; top: 2px; }  
+.c4 { left: 115px; top: 16px; }
+.c5 { left: 135px; top: 8px; }
+
+.flame {
+    width: 10px;
+    height: 16px;
+    background: #ffb347;
+    border-radius: 50% 50% 30% 30% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -18px;
+    left: -2px;
+    box-shadow: 0 0 10px rgba(255, 179, 71, 0.7);
+    animation: flicker 0.6s infinite alternate ease-in-out; 
+}
+
+@keyframes flicker {
+    0% { transform: scale(1) rotate(-2deg); }
+    100% { transform: scale(1.15) rotate(2deg); }
+}
+
+.cake-aesthetic {
+    width: 190px;
+    height: 120px;
+    background-color: #4a2828; 
+    border-radius: 20px 20px 10px 10px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+.middle-pink-layer {
+    position: absolute;
+    width: 100%;
+    height: 18px;
+    background-color: #ff85a1; 
+    top: 62px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.top-cream {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    background-color: #fffde6; 
+    top: 0;
+    border-radius: 18px 18px 15px 15px;
+}
+.top-cream::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    background-color: #fffde6;
+    bottom: -12px;
+    left: 0;
+    border-radius: 0 0 50% 50%;
+}
+
+.cream-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #fffde6;
+    border-radius: 50%;
+}
+.d1 { bottom: 35px; left: 30px; }
+.d2 { bottom: 20px; right: 40px; }
+
+.strawberry {
+    position: absolute;
+    width: 24px;
+    height: 26px;
+    background-color: #e63946; 
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    box-shadow: inset 3px -3px 0 #b7094c;
+}
+.s1 { top: 5px; left: 15px; transform: rotate(-15deg); }
+.s2 { top: 18px; left: 55px; transform: rotate(10deg); }
+.s3 { top: 16px; left: 95px; transform: rotate(-10deg); }
+.s4 { top: 8px; left: 145px; transform: rotate(20deg); }
+
+.plate-lace {
+    width: 230px;
+    height: 15px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    margin: -5px auto 0 auto;
+    position: relative;
+    z-index: 1;
+    background-image: radial-gradient(circle, #faf6f0 4px, transparent 5px);
+    background-size: 12px 12px;
+}
+
+.plate-base {
+    width: 240px;
+    height: 12px;
+    background-color: #a8dadc; 
+    border-radius: 20px;
+    margin: -10px auto 0 auto;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.04);
+}
+
+/* --- SURAT/MESSAGE BOX --- */
+.message-box {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(141, 110, 97, 0.08);
+    text-align: left;
+    width: 100%;
+    position: relative;
+}
+
+.second-box {
+    border-top: 5px solid #b388ff; 
+}
+
+.message-box p {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    color: #6b5b5b;
+}
+
+.message-box i {
+    color: #ba9b8a;
+}
+
+.message-box .signature {
+    font-weight: 600;
+    color: #7d6e61;
+    text-align: right;
+    margin-top: 25px;
+    font-size: 0.9rem;
+}
+
+/* --- BUTTON NEXT AESTHETIC --- */
+.next-btn-container {
+    text-align: center;
+    margin: 25px 0 10px 0;
+}
+
+.next-aesthetic-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #7d6e61;
+    background-color: #faf6f0;
+    border: 1px solid #ebdacf;
+    padding: 10px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(141, 110, 97, 0.04);
+}
+
+.next-aesthetic-btn:hover {
+    background-color: #ff85a1;
+    color: #ffffff;
+    border-color: #ff85a1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 133, 161, 0.3);
+}
+
+.next-aesthetic-btn:active {
+    transform: translateY(0);
+}

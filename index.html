@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hbd_ecal!!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <div id="page-1" class="page-content active">
+            <h1>happy birthday sayangg!!!<br>click the cake to turn off the candles</h1>
+
+            <div class="bg-decorations">
+                <span class="bg-sprinkle bs1"></span>
+                <span class="bg-sprinkle bs2"></span>
+                <span class="bg-sprinkle bs3"></span>
+                <span class="bg-sprinkle bs4"></span>
+                <span class="bg-star bst1">✦</span>
+                <span class="bg-star bst2">✦</span>
+                <span class="bg-emoji be1">😮</span>
+                <span class="bg-emoji be2">🥳</span>
+            </div>
+
+            <div class="cake-container" onclick="turnOffCandle()">
+                <div class="candles-group">
+                    <div class="candle c1"><div class="flame"></div></div>
+                    <div class="candle c2"><div class="flame"></div></div>
+                    <div class="candle c3"><div class="flame"></div></div>
+                    <div class="candle c4"><div class="flame"></div></div>
+                    <div class="candle c5"><div class="flame"></div></div>
+                </div>
+
+                <div class="cake-aesthetic">
+                    <div class="top-cream">
+                        <div class="strawberry s1"></div>
+                        <div class="strawberry s2"></div>
+                        <div class="strawberry s3"></div>
+                        <div class="strawberry s4"></div>
+                    </div>
+                    <div class="middle-pink-layer"></div>
+                    <div class="cream-dot d1"></div>
+                    <div class="cream-dot d2"></div>
+                </div>
+
+                <div class="plate-lace"></div>
+                <div class="plate-base"></div>
+            </div>
+        </div>
+
+        <div id="loading-page" class="page-content">
+            <div class="loading-container">
+                <p class="loading-text">making a wish...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-2" class="page-content">
+            <div class="message-box">
+                <p>happiest birthday to you, sayanggg!! 🥳✨</p>
+                <p>on your special day, i hope you are always surrounded by love, happiness, and endless joy. may all your dreams, wishes, and prayers come true in this new chapter of your life.</p>
+                <p>thank you for being such an amazing person and for working so hard until today. <i>make a wish and have a beautiful year ahead!</i> 🤍🥂</p>
+                
+                <div class="next-btn-container">
+                    <button class="next-aesthetic-btn" onclick="goToNextLoading()">read more 🤍</button>
+                </div>
+                
+                <div class="signature">— with love, ayaaaa</div>
+            </div>
+        </div>
+
+        <div id="loading-page-2" class="page-content">
+            <div class="loading-container">
+                <p class="loading-text" style="color: #b388ff;">unwrapping memories...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="page-3" class="page-content">
+            <div class="message-box second-box">
+                <p>another page just for you! 📝✨</p>
+                <p>i just want to remind you how much you mean to me. everyday is brighter with you around, and i'm so incredibly grateful to have you by my side through all the ups and downs.</p>
+                <p>cheers to more laughter, more late-night talks, and more beautiful memories together. i love you today, tomorrow, and always, ecal! 🥰🎂 tag, you're it!</p>
+                <div class="signature">— always yours, ayaaaa</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <script src="JS/script.js"></script>
+</body>
+</html>
